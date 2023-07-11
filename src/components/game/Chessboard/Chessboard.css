@@ -1,0 +1,8 @@
+.chessboard {
+  border: 2px solid black;
+  width: 100vmin; /* Altura do tabuleiro (ajuste conforme necessário) */
+  height: 100vmin; /* Altura do tabuleiro (ajuste conforme necessário) */
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+}

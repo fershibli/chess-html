@@ -1,0 +1,13 @@
+.tile {
+  padding-bottom: 12.5%; /* Altura do quadrado (ajuste conforme necessário) */
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.dark-tile {
+  background-color: #8b4513; /* Cor para o quadrado escuro */
+}
+
+.light-tile {
+  background-color: #deb887; /* Cor para o quadrado claro */
+}
