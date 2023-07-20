@@ -4,3 +4,5 @@ import "Piece.css";
 const Piece = ({ char }) => {
     return <div className="piece">{char}</div>;
 };
+
+export default Piece;
