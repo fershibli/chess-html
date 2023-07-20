@@ -1,14 +1,15 @@
-import React from "react"
-import "./Tile.css"
+import React from "react";
+import "./Tile.css";
+import Piece from "../Piece/Piece";
 
 const Tile = ({ row, col, isDark }) => {
-  const tileClass = isDark ? "dark-tile" : "light-tile"
+    const tileClass = isDark ? "dark-tile" : "light-tile";
 
-  return (
-    <button className={`tile ${tileClass}`}>
-      <span>{`${row}, ${col}`}</span>
-    </button>
-  )
-}
+    return (
+        <button className={`tile ${tileClass}`}>
+            <Piece char={`${row}, ${col}`} />
+        </button>
+    );
+};
 
-export default Tile
+export default Tile;

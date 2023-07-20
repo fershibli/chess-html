@@ -1,4 +1,4 @@
 .piece {
-    text-align: center;
-    font-size: xx-large;
+    transform: translate(-1em, -0.5em) rotateX(-30deg) rotateZ(-30deg)
+        skew(+20deg, -20deg) scale(2, 5);
 }
