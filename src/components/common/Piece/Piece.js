@@ -1,7 +1,7 @@
 import React from "react";
 import "./Piece.css";
 
-const Piece = ({ char, col, row }) => {
+const Piece = ({ render, col, row }) => {
     return (
         <div style={{ position: "relative" }}>
             <span
@@ -15,7 +15,7 @@ const Piece = ({ char, col, row }) => {
             >
                 {row + 1}, {col + 1}
             </span>
-            {char && <div className="piece">{char}</div>}
+            {render && <div className="piece">{render}</div>}
         </div>
     );
 };

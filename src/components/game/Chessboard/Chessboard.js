@@ -35,7 +35,7 @@ const Chessboard = () => {
                     <Tile
                         key={`${tile.row}-${tile.col}`}
                         tile={tile}
-                        isDark={(tile.row + tile.col) % 2 === 1}
+                        isTileDark={(tile.row + tile.col) % 2 === 1}
                     />
                 ))
             )}
