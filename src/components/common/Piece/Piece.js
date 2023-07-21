@@ -19,7 +19,8 @@ const Piece = ({ isPieceDark, pieceRender, pieceScale, col, row }) => {
                 <div
                     className="piece"
                     style={{
-                        "--color": isPieceDark ? "slateblue" : "salmon",
+                        "--color1": isPieceDark ? "slateblue" : "salmon",
+                        "--color2": isPieceDark ? "navy" : "tomato",
                         "--scale": pieceScale,
                     }}
                 >
