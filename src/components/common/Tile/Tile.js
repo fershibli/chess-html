@@ -2,12 +2,12 @@ import React from "react";
 import "./Tile.css";
 import Piece from "../Piece/Piece";
 
-const Tile = ({ row, col, isDark }) => {
+const Tile = ({ tile, isDark }) => {
     const tileClass = isDark ? "dark-tile" : "light-tile";
 
     return (
         <button className={`tile ${tileClass}`}>
-            <Piece char={`${row}, ${col}`} />
+            <Piece char={`${tile.row}, ${tile.col}`} />
         </button>
     );
 };

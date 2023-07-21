@@ -106,3 +106,14 @@ export const PAWN = {
         return filterValidMoves(possibleMoves);
     },
 };
+
+export const BACK_LANE = [
+    ROOK,
+    KNIGHT,
+    BISHOP,
+    KING,
+    QUEEN,
+    BISHOP,
+    KNIGHT,
+    ROOK,
+];

@@ -1,30 +1,41 @@
 import React from "react";
 import Tile from "../../common/Tile/Tile";
 import "./Chessboard.css";
+import * as ChessPieces from "../../../utils/ChessPieces";
 
 const Chessboard = () => {
-    const boardCells = [];
+    const boardTiles = [];
     for (let row = 0; row < 8; row++) {
-        boardCells.push([]);
+        boardTiles.push([]);
         for (let col = 0; col < 8; col++) {
-            boardCells[row].push({
-                empty: true,
-                piece: null,
-                row,
-                col,
-            });
+            const tile = { row, col };
+            switch (row) {
+                case 0:
+                case 7:
+                    tile.empty = false;
+                    tile.piece = ChessPieces.BACK_LANE[col];
+                    break;
+                case 1:
+                case 6:
+                    tile.empty = false;
+                    tile.piece = ChessPieces.PAWN;
+                    break;
+                default:
+                    tile.empty = true;
+                    tile.piece = null;
+            }
+            boardTiles[row].push(tile);
         }
     }
 
     return (
         <div className="chessboard">
-            {boardCells.map((row) =>
-                row.map((cell) => (
+            {boardTiles.map((row) =>
+                row.map((tile) => (
                     <Tile
-                        key={`${cell.row}-${cell.col}`}
-                        isDark={(cell.row + cell.col) % 2 === 1}
-                        row={cell.row}
-                        col={cell.col}
+                        key={`${tile.row}-${tile.col}`}
+                        tile={tile}
+                        isDark={(tile.row + tile.col) % 2 === 1}
                     />
                 ))
             )}
