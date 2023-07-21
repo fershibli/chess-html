@@ -20,7 +20,7 @@ const Piece = ({ isPieceDark, pieceRender, pieceScale, col, row }) => {
                     className="piece"
                     style={{
                         "--color": isPieceDark ? "slateblue" : "salmon",
-                        "--scale": 1,
+                        "--scale": pieceScale,
                     }}
                 >
                     {pieceRender}

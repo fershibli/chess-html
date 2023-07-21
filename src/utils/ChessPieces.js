@@ -7,6 +7,7 @@ const filterValidMoves = (moves) => {
 export const KING = {
     dark: "\u265A",
     light: "\u2654",
+    size: 1.7,
     getMoves: (row, col) => {
         const possibleMoves = [
             { row: row + 1, col },
@@ -26,6 +27,7 @@ export const KING = {
 export const QUEEN = {
     dark: "\u265B",
     light: "\u2655",
+    size: 1.7,
     getMoves: (row, col) => {
         const bishopMoves = BISHOP.getMoves(row, col);
         const rookMoves = ROOK.getMoves(row, col);
@@ -38,6 +40,7 @@ export const QUEEN = {
 export const ROOK = {
     dark: "\u265C",
     light: "\u2656",
+    size: 1.2,
     getMoves: (row, col) => {
         const possibleMoves = [];
 
@@ -56,6 +59,7 @@ export const ROOK = {
 export const BISHOP = {
     dark: "\u265D",
     light: "\u2657",
+    size: 1.4,
     getMoves: (row, col) => {
         const possibleMoves = [];
 
@@ -77,6 +81,7 @@ export const BISHOP = {
 export const KNIGHT = {
     dark: "\u265E",
     light: "\u2658",
+    size: 1.5,
     getMoves: (row, col) => {
         const possibleMoves = [
             { row: row + 2, col: col + 1 },
@@ -96,6 +101,7 @@ export const KNIGHT = {
 export const PAWN = {
     dark: "\u265F",
     light: "\u2659",
+    size: 1,
     getMoves: (row, col) => {
         const possibleMoves = [
             { row: row + 1, col, isAttackMove: false },

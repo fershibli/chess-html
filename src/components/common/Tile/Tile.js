@@ -10,7 +10,7 @@ const Tile = ({ tile, isTileDark }) => {
             <Piece
                 isPieceDark={tile.piece?.isDark}
                 pieceRender={tile.piece?.data.dark}
-                pieceScale={1}
+                pieceScale={tile.piece?.data.size}
                 col={tile.col}
                 row={tile.row}
             />
