@@ -7,7 +7,7 @@ const Tile = ({ tile, isDark }) => {
 
     return (
         <button className={`tile ${tileClass}`}>
-            <Piece char={`${tile.row}, ${tile.col}`} />
+            <Piece char={tile.piece?.dark} />
         </button>
     );
 };
