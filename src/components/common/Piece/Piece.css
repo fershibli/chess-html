@@ -1,4 +1,9 @@
 .piece {
+    background: linear-gradient(180deg, transparent 0%, #333 80%);
+    background-clip: text;
+    /* -webkit-text-fill-color: transparent; */
+    -webkit-text-stroke: 1px transparent;
+    color: var(--color);
     transform: translate(-1em, -0.5em) rotateX(-30deg) rotateZ(-30deg)
         skew(+20deg, -20deg) scale(2, 5);
 }

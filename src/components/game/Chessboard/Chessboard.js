@@ -13,12 +13,15 @@ const Chessboard = () => {
                 case 0:
                 case 7:
                     tile.empty = false;
-                    tile.piece = ChessPieces.BACK_LANE[col];
+                    tile.piece = {
+                        data: ChessPieces.BACK_LANE[col],
+                        isDark: row === 0,
+                    };
                     break;
                 case 1:
                 case 6:
                     tile.empty = false;
-                    tile.piece = ChessPieces.PAWN;
+                    tile.piece = { data: ChessPieces.PAWN, isDark: row === 1 };
                     break;
                 default:
                     tile.empty = true;
