@@ -8,8 +8,9 @@ const Tile = ({ tile, isTileDark }) => {
     return (
         <button className={`tile ${tileClass}`}>
             <Piece
-                render={tile.piece?.data.dark}
                 isPieceDark={tile.piece?.isDark}
+                pieceRender={tile.piece?.data.dark}
+                pieceScale={1}
                 col={tile.col}
                 row={tile.row}
             />

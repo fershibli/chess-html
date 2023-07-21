@@ -5,5 +5,6 @@
     -webkit-text-stroke: 1px transparent;
     color: var(--color);
     transform: translate(-1em, -0.5em) rotateX(-30deg) rotateZ(-30deg)
-        skew(+20deg, -20deg) scale(2, 5);
+        skew(+20deg, -20deg)
+        scale(calc(2 * var(--scale)), calc(5 * var(--scale)));
 }

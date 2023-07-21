@@ -1,7 +1,7 @@
 import React from "react";
 import "./Piece.css";
 
-const Piece = ({ isPieceDark, render, col, row }) => {
+const Piece = ({ isPieceDark, pieceRender, pieceScale, col, row }) => {
     return (
         <div style={{ position: "relative" }}>
             <span
@@ -15,12 +15,15 @@ const Piece = ({ isPieceDark, render, col, row }) => {
             >
                 {row + 1}, {col + 1}
             </span>
-            {render && (
+            {pieceRender && (
                 <div
                     className="piece"
-                    style={{ "--color": isPieceDark ? "slateblue" : "salmon" }}
+                    style={{
+                        "--color": isPieceDark ? "slateblue" : "salmon",
+                        "--scale": 1,
+                    }}
                 >
-                    {render}
+                    {pieceRender}
                 </div>
             )}
         </div>
