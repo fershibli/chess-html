@@ -24,6 +24,6 @@
         transform: translate(-1em, -1em);
     }
     100% {
-        background: radial-gradient(circle, aqua 0%, aquamarine 100%);
+        background: radial-gradient(circle, lightskyblue 50%, deepskyblue 100%);
     }
 }
