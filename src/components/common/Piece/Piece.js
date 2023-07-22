@@ -22,6 +22,7 @@ const Piece = ({ isPieceDark, pieceRender, pieceScale, col, row }) => {
                         "--color1": isPieceDark ? "106,90,205" : "250,128,114",
                         "--color2": isPieceDark ? "0,0,128" : "255,99,71",
                         "--scale": pieceScale,
+                        "--delay": `${(col + row) * 100}ms`,
                     }}
                 >
                     {pieceRender}
