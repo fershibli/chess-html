@@ -1,13 +1,13 @@
 .piece {
     background: linear-gradient(
         180deg,
-        transparent -25%,
-        var(--color1) 60%,
-        var(--color2) 100%
+        rgba(var(--color1), 0.3) 0%,
+        rgba(var(--color1), 1) 50%,
+        rgb(var(--color2), 1) 100%
     );
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 0.5px rgba(51, 51, 51, 0.6);
+    -webkit-text-stroke: 0.5px rgba(var(--color2), 0.2);
     /* color: var(--color); */
     transform: translate(-1em, -0.5em) rotateX(-30deg) rotateZ(-30deg)
         skew(+20deg, -20deg)
