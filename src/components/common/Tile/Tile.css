@@ -1,13 +1,29 @@
 .tile {
-  padding-bottom: 12.5%; /* Altura do quadrado (ajuste conforme necessário) */
-  display: inline-block;
-  box-sizing: border-box;
+    padding-bottom: 12.5%; /* Altura do quadrado (ajuste conforme necessário) */
+    display: inline-block;
+    box-sizing: border-box;
+    animation: emerge;
+    animation-duration: 500ms;
+    animation-delay: var(--delay);
 }
 
 .dark-tile {
-  background-color: #8b4513; /* Cor para o quadrado escuro */
+    background-color: #8b4513; /* Cor para o quadrado escuro */
 }
 
 .light-tile {
-  background-color: #deb887; /* Cor para o quadrado claro */
+    background-color: #deb887; /* Cor para o quadrado claro */
+}
+
+@keyframes emerge {
+    0% {
+        transform: translate(1em, 1em);
+        background-color: transparent;
+    }
+    50% {
+        transform: translate(-1em, -1em);
+    }
+    100% {
+        background: radial-gradient(circle, aqua 0%, aquamarine 100%);
+    }
 }

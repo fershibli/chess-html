@@ -6,7 +6,10 @@ const Tile = ({ tile, isTileDark }) => {
     const tileClass = isTileDark ? "dark-tile" : "light-tile";
 
     return (
-        <button className={`tile ${tileClass}`}>
+        <button
+            className={`tile ${tileClass}`}
+            style={{ "--delay": `${(tile.row + tile.col) * 100}ms` }}
+        >
             <Piece
                 isPieceDark={tile.piece?.isDark}
                 pieceRender={tile.piece?.data.dark}
