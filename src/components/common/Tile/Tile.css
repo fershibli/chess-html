@@ -2,9 +2,11 @@
     padding-bottom: 12.5%; /* Altura do quadrado (ajuste conforme necessário) */
     display: inline-block;
     box-sizing: border-box;
-    animation: emerge;
-    animation-duration: 500ms;
-    animation-delay: var(--delay);
+    background-color: transparent;
+    animation: emptyAnimation, emergeAnimation;
+    animation-fill-mode: forwards, backwards;
+    animation-duration: 500ms, 500ms;
+    animation-delay: 0s, var(--delay);
 }
 
 .dark-tile {
@@ -15,7 +17,14 @@
     background-color: #deb887; /* Cor para o quadrado claro */
 }
 
-@keyframes emerge {
+@keyframes emptyAnimation {
+    from {
+        transform: translate(-1em, -1em);
+        background-color: transparent;
+    }
+}
+
+@keyframes emergeAnimation {
     0% {
         transform: translate(1em, 1em);
         background-color: transparent;
@@ -23,7 +32,10 @@
     50% {
         transform: translate(-1em, -1em);
     }
-    100% {
+    90% {
         background: radial-gradient(circle, lightskyblue 50%, deepskyblue 100%);
+    }
+    100% {
+        background-color: transparent;
     }
 }
