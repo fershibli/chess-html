@@ -5,8 +5,8 @@
     background-color: transparent;
     animation: emptyAnimation, emergeAnimation;
     animation-fill-mode: forwards, backwards;
-    animation-duration: 500ms, 500ms;
-    animation-delay: 0s, var(--delay);
+    animation-duration: 1000ms, 1000ms;
+    animation-delay: 0s, calc(var(--delay) * 2);
 }
 
 .dark-tile {

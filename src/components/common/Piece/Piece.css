@@ -14,8 +14,8 @@
         scale(calc(2 * var(--scale)), calc(5 * var(--scale)));
     animation: emptyPieceAnimation, dropAnimation;
     animation-fill-mode: forwards, backwards;
-    animation-duration: 500ms, 500ms;
-    animation-delay: 0s, calc(1s + var(--delay));
+    animation-duration: 1000ms, 1000ms;
+    animation-delay: 0s, calc(1s + var(--delay) * 3);
 }
 
 @keyframes emptyPieceAnimation {
