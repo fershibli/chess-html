@@ -1,7 +1,7 @@
 const filterValidMoves = (moves) => {
-    return moves
-        .filter(([row, col]) => row >= 0 && row < 8 && col >= 0 && col < 8)
-        .map(([row, col]) => ({ row, col }));
+    return moves.filter(
+        ({ row, col }) => row >= 0 && row < 8 && col >= 0 && col < 8
+    );
 };
 
 export const KING = {

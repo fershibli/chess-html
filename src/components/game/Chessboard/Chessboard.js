@@ -10,6 +10,7 @@ const Chessboard = () => {
             return;
         }
         setAvailableMoves(tile.piece.data.getMoves(tile.row, tile.col));
+        console.log(availableMoves);
     };
     const boardTiles = [];
     for (let row = 0; row < 8; row++) {
@@ -47,6 +48,7 @@ const Chessboard = () => {
                         tile={tile}
                         isTileDark={(tile.row + tile.col) % 2 === 1}
                         selectMovement={selectMovement}
+                        availableMoves={availableMoves}
                     />
                 ))
             )}

@@ -9,6 +9,10 @@
     animation-delay: 0s, calc(var(--delay) * 2);
 }
 
+.available-tile {
+    background-color: aquamarine;
+}
+
 .dark-tile {
     background-color: #8b4513; /* Cor para o quadrado escuro */
 }
