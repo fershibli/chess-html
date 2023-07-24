@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Tile from "../../common/Tile/Tile";
 import "./Chessboard.css";
 import * as ChessPieces from "../../../utils/ChessPieces";
 
 const Chessboard = () => {
+    const [availableMoves, setAvailableMoves] = useState([]);
+    const selectMovement = (tile) => {
+        if (!tile.piece) {
+            return;
+        }
+        setAvailableMoves(tile.piece.data.getMoves(tile.row, tile.col));
+    };
     const boardTiles = [];
     for (let row = 0; row < 8; row++) {
         boardTiles.push([]);
