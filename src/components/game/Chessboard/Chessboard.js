@@ -46,6 +46,7 @@ const Chessboard = () => {
                         key={`${tile.row}-${tile.col}`}
                         tile={tile}
                         isTileDark={(tile.row + tile.col) % 2 === 1}
+                        selectMovement={selectMovement}
                     />
                 ))
             )}

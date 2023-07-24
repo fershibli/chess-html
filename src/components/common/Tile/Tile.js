@@ -2,11 +2,12 @@ import React from "react";
 import "./Tile.css";
 import Piece from "../Piece/Piece";
 
-const Tile = ({ tile, isTileDark }) => {
+const Tile = ({ tile, isTileDark, selectMovement }) => {
     const tileClass = isTileDark ? "dark-tile" : "light-tile";
 
     return (
         <button
+            onClick={selectMovement}
             className={`tile ${tileClass}`}
             style={{ "--delay": `${(tile.row + tile.col) * 100}ms` }}
         >
