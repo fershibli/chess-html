@@ -9,7 +9,9 @@ const Chessboard = () => {
         if (!tile.piece) {
             return;
         }
-        setAvailableMoves(tile.piece.data.getMoves(tile.row, tile.col));
+        setAvailableMoves(
+            tile.piece.data.getMoves(tile.row, tile.col, tile.piece.isDark)
+        );
         console.log(availableMoves);
     };
     const boardTiles = [];

@@ -102,11 +102,22 @@ export const PAWN = {
     dark: "\u265F",
     light: "\u2659",
     size: 1,
-    getMoves: (row, col) => {
+    getMoves: (row, col, isDark) => {
+        const direction = isDark ? 1 : -1;
+        console.log(isDark);
         const possibleMoves = [
-            { row: row + 1, col, isAttackMove: false },
-            { row: row + 1, col: col + 1, isAttackMove: true },
-            { row: row + 1, col: col - 1, isAttackMove: true },
+            { row: row - direction, col, isAttackMove: false },
+            { row: row + direction, col, isAttackMove: false },
+            {
+                row: row + direction,
+                col: col + 1,
+                isAttackMove: true,
+            },
+            {
+                row: row + direction,
+                col: col - 1,
+                isAttackMove: true,
+            },
         ];
 
         return filterValidMoves(possibleMoves);
