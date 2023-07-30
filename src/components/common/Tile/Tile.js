@@ -4,7 +4,13 @@ import Piece from "../Piece/Piece";
 
 const Tile = ({ tile, isTileDark, showMovements, availableMoves }) => {
     const [isAvailableMove, setIsAvailableMove] = useState(false);
+    const [isMovingPiece, setIsMovingPiece] = useState(false);
     const tileClass = isTileDark ? "dark-tile" : "light-tile";
+
+    const handleTileClick = () => {
+        setIsMovingPiece(true);
+        showMovements(tile);
+    };
 
     useEffect(() => {
         setIsAvailableMove(false);
@@ -21,10 +27,22 @@ const Tile = ({ tile, isTileDark, showMovements, availableMoves }) => {
         }
     }, [availableMoves, tile]);
 
+    const getClassName = () => {
+        let allClasses = "tile ";
+        if (isAvailableMove) {
+            allClasses += "available-tile";
+        } else if (isMovingPiece) {
+            allClasses += "moving-tile";
+        } else {
+            allClasses += tileClass;
+        }
+        return allClasses;
+    };
+
     return (
         <button
-            onClick={() => showMovements(tile)}
-            className={`tile ${isAvailableMove ? "available-tile" : tileClass}`}
+            onClick={handleTileClick}
+            className={getClassName()}
             style={{ "--delay": `${(tile.row + tile.col) * 100}ms` }}
         >
             <Piece

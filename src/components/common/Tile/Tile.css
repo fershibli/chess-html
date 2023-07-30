@@ -13,6 +13,10 @@
     background-color: aquamarine;
 }
 
+.moving-tile {
+    background-color: green;
+}
+
 .dark-tile {
     background-color: #8b4513; /* Cor para o quadrado escuro */
 }
