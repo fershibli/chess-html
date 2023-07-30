@@ -1,4 +1,8 @@
 .piece {
+    position: absolute;
+    color: gray;
+    top: 50%;
+    left: 50%;
     background: linear-gradient(
         180deg,
         rgba(var(--color1), 0.3) 0%,
@@ -9,7 +13,7 @@
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 0.5px rgba(var(--color2), 0.2);
     /* color: var(--color); */
-    transform: translate(-1em, -0.5em) rotateX(-30deg) rotateZ(-30deg)
+    transform: translate(-150%, -100%) rotateX(-30deg) rotateZ(-30deg)
         skew(+20deg, -20deg)
         scale(calc(2 * var(--scale)), calc(5 * var(--scale)));
     animation: emptyPieceAnimation, dropAnimation;
@@ -42,7 +46,7 @@
         background-clip: text;
         -webkit-text-fill-color: transparent;
         -webkit-text-stroke: 0.5px rgba(var(--color2), 0.2);
-        transform: translate(-4em, -2.5em) rotateX(-30deg) rotateZ(-30deg)
+        transform: translate(-600%, -400%) rotateX(-30deg) rotateZ(-30deg)
             skew(+20deg, -20deg)
             scale(calc(2 * var(--scale)), calc(5 * var(--scale)));
     }
@@ -56,7 +60,7 @@
         background-clip: text;
         -webkit-text-fill-color: transparent;
         -webkit-text-stroke: 0.5px rgba(var(--color2), 0.2);
-        transform: translate(-1em, -0.5em) rotateX(-30deg) rotateZ(-30deg)
+        transform: translate(-150%, -100%) rotateX(-30deg) rotateZ(-30deg)
             skew(+20deg, -20deg)
             scale(calc(2 * var(--scale)), calc(5 * var(--scale)));
     }
