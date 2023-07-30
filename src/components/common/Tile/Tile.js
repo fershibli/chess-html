@@ -8,8 +8,10 @@ const Tile = ({ tile, isTileDark, showMovements, availableMoves }) => {
     const tileClass = isTileDark ? "dark-tile" : "light-tile";
 
     const handleTileClick = () => {
-        setIsMovingPiece(true);
-        showMovements(tile);
+        if (tile.piece) {
+            setIsMovingPiece(true);
+            showMovements(tile);
+        }
     };
 
     useEffect(() => {
