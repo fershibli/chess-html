@@ -104,7 +104,6 @@ export const PAWN = {
     size: 1,
     getMoves: (row, col, isDark) => {
         const direction = isDark ? 1 : -1;
-        console.log(isDark);
         const possibleMoves = [
             { row: row - direction, col, isAttackMove: false },
             { row: row + direction, col, isAttackMove: false },

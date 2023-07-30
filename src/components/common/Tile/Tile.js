@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Tile.css";
 import Piece from "../Piece/Piece";
 
-const Tile = ({ tile, isTileDark, selectMovement, availableMoves }) => {
+const Tile = ({ tile, isTileDark, showMovements, availableMoves }) => {
     const [isAvailableMove, setIsAvailableMove] = useState(false);
     const tileClass = isTileDark ? "dark-tile" : "light-tile";
 
@@ -23,7 +23,7 @@ const Tile = ({ tile, isTileDark, selectMovement, availableMoves }) => {
 
     return (
         <button
-            onClick={() => selectMovement(tile)}
+            onClick={() => showMovements(tile)}
             className={`tile ${isAvailableMove ? "available-tile" : tileClass}`}
             style={{ "--delay": `${(tile.row + tile.col) * 100}ms` }}
         >

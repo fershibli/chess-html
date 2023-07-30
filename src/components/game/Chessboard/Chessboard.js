@@ -5,14 +5,13 @@ import * as ChessPieces from "../../../utils/ChessPieces";
 
 const Chessboard = () => {
     const [availableMoves, setAvailableMoves] = useState([]);
-    const selectMovement = (tile) => {
+    const showMovements = (tile) => {
         if (!tile.piece) {
             return;
         }
         setAvailableMoves(
             tile.piece.data.getMoves(tile.row, tile.col, tile.piece.isDark)
         );
-        console.log(availableMoves);
     };
     const boardTiles = [];
     for (let row = 0; row < 8; row++) {
@@ -49,7 +48,7 @@ const Chessboard = () => {
                         key={`${tile.row}-${tile.col}`}
                         tile={tile}
                         isTileDark={(tile.row + tile.col) % 2 === 1}
-                        selectMovement={selectMovement}
+                        showMovements={showMovements}
                         availableMoves={availableMoves}
                     />
                 ))
