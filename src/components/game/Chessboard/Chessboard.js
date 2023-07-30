@@ -5,10 +5,12 @@ import * as ChessPieces from "../../../utils/ChessPieces";
 
 const Chessboard = () => {
     const [availableMoves, setAvailableMoves] = useState([]);
+    const [currentMovingPiece, setCurrentMovingPiece] = useState(null);
     const showMovements = (tile) => {
         if (!tile.piece) {
             return;
         }
+        setCurrentMovingPiece({ row: tile.row, col: tile.col });
         setAvailableMoves(
             tile.piece.data.getMoves(tile.row, tile.col, tile.piece.isDark)
         );
@@ -50,6 +52,7 @@ const Chessboard = () => {
                         isTileDark={(tile.row + tile.col) % 2 === 1}
                         showMovements={showMovements}
                         availableMoves={availableMoves}
+                        currentMovingPiece={currentMovingPiece}
                     />
                 ))
             )}

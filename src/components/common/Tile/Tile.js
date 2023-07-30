@@ -2,16 +2,18 @@ import React, { useEffect, useState } from "react";
 import "./Tile.css";
 import Piece from "../Piece/Piece";
 
-const Tile = ({ tile, isTileDark, showMovements, availableMoves }) => {
+const Tile = ({
+    tile,
+    isTileDark,
+    showMovements,
+    availableMoves,
+    currentMovingPiece,
+}) => {
     const [isAvailableMove, setIsAvailableMove] = useState(false);
-    const [isMovingPiece, setIsMovingPiece] = useState(false);
     const tileClass = isTileDark ? "dark-tile" : "light-tile";
 
     const handleTileClick = () => {
-        if (tile.piece) {
-            setIsMovingPiece(true);
-            showMovements(tile);
-        }
+        showMovements(tile);
     };
 
     useEffect(() => {
@@ -33,7 +35,10 @@ const Tile = ({ tile, isTileDark, showMovements, availableMoves }) => {
         let allClasses = "tile ";
         if (isAvailableMove) {
             allClasses += "available-tile";
-        } else if (isMovingPiece) {
+        } else if (
+            currentMovingPiece?.row === tile.row &&
+            currentMovingPiece?.col === tile.col
+        ) {
             allClasses += "moving-tile";
         } else {
             allClasses += tileClass;
